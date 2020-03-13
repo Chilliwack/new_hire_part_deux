@@ -1,3 +1,4 @@
 config.txt
 test/employees_TEST.csv
 .ipynb_checkpoints
+.DS_Store
