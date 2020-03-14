@@ -1,0 +1,6 @@
+{"filepath": FILEPATH TO TOOLBOX FILE, 
+"test_filepath": FILEPATH TO TEST FILE,
+"send_from": SEND FROM EMAIL ADDRESS,
+"subject": EMAIL SUBJECT LINE,
+"message": EMAIL MESSAGE,
+"test_send_to": SEND TO TEST ADDRESS}
