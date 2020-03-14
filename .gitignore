@@ -1,4 +1,9 @@
 config.txt
-.ipynb_checkpoints
 .DS_Store
 .vscode/settings.json
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
