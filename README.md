@@ -9,8 +9,6 @@ new_hire is a Python 3 script and set of functions that intergrates with the [Hu
 3. Below discusses some of it's default parameters. _By default it is setup to retrieve the new users from Toolbox that have been added since the last time it ran. The "last time it ran" defaults to 7 days before it's current runtime. Therefore, if setup as a weekly CRON job it'll always be looking for new users over a 7-day timespan._
 4. The script also ingests a config.txt file that is in the same directory as the script and contains a dictionary of key/values you can use to set key variables in the script such as.
 
-![](/doc/assets/fig1.png)
-
 5. The script must also be executed behind the firewall
 
 ## Overview
