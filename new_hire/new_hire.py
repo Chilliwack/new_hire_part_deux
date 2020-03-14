@@ -3,7 +3,7 @@
 
 ## Define functions
 def get_employees(filepath):
-    """ takes a Toolbox csv filepath and retrieves it and exports as dataframe
+    """ takes a Toolbox csv filepath, retrieves it and exports as dataframe
     """
     import pandas as pd
     
@@ -72,7 +72,6 @@ def hires_by_jobTitle(df):
         return df[df.jobTitle.isin(jobTitle_list)]
     except:
         print("Error: selecting by jobTitle")
-
 
 # Email Function
 # Graciously shared by Mike B who shamelessly stole it from stackoverflow :)
@@ -145,11 +144,11 @@ def run_process(test=True):
     
     import logging
     # Set up logging (start time, end time, toolbox output for each run, any errors (from toolbox fun or email returns))
+    # NEED TO DO STILL
 
     import json, os
     # Load and assign config values from 'config.txt'
     
-    # __file__ = 'new_hire.ipynb'
     path_to_test= os.path.dirname(os.path.realpath(__file__))
     base_path= os.path.dirname(path_to_test)
     full_path = base_path + '/new_hire/config.txt'
@@ -209,6 +208,6 @@ def run_process(test=True):
             print("Error: sending emails")
         
     # 8. Logging and error reporting
+    # NEED TO DO STILL
     
 run_process(test=True)
-
