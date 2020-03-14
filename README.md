@@ -35,5 +35,5 @@ The new_hire.py script utilizes the following functions to query, filter, and ex
 
 - run_process() - runs the whole process and has a test parameter currently defaulted to `True` which sets up an environment to test/debug. You can start a local SMTP debugging server by typing the following in shell `python -m smtpd -c DebuggingServer -n localhost:1025` and set server to `localhost` in the send_mail()
 
-The script is design to run weekly, grabbing the latest data from Toolbox, then querying, filtering, and extracting the data requested and based on that data compile and send electronic communications. The output of the script is successful sends of electionic communications with the required data so not file or data is exported. There is a log file which shows script start time, end time, toolbox output for each run, as well as any errors from toolbox functionality or email.
+The script is designed to run weekly, grabbing the latest data from Toolbox, then querying, filtering, and extracting the data requested and based on that data compile and send electronic communications. The output of the script is successful sends of electionic communications with the required data so not file or data is exported. There is a log file which shows script start time, end time, toolbox output for each run, as well as any errors from toolbox functionality or email.
 
