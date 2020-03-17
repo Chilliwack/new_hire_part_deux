@@ -211,3 +211,10 @@ def run_process(test=True):
     # NEED TO DO STILL
     
 run_process(test=True)
+
+# Check to see if this file is being executed as the main python script
+# instead of being used as a module by some other python script this
+# allows us to use the module however we want.
+
+if __name__ == '__main__':
+    run_process()
