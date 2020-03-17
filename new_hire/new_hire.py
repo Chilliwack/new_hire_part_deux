@@ -212,9 +212,6 @@ def run_process(test=True):
     
 run_process(test=True)
 
-# Check to see if this file is being executed as the main python script
-# instead of being used as a module by some other python script this
-# allows us to use the module however we want.
-
+# Check to see if new_hire.py is being runned as a script. If so run_process()
 if __name__ == '__main__':
     run_process()
