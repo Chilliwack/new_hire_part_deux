@@ -7,3 +7,6 @@ config.txt
 
 # pyenv
 .python-version
+
+# logs
+*.log

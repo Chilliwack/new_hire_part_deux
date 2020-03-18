@@ -144,7 +144,8 @@ def run_process(test=True):
     
     import logging
     # Set up logging (start time, end time, toolbox output for each run, any errors (from toolbox fun or email returns))
-    # NEED TO DO STILL
+    logging.basicConfig(filename='script.log', filemode='a', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+    logging.info('Process started') # logging start time
 
     import json, os
     # Load and assign config values from 'config.txt'
@@ -169,7 +170,7 @@ def run_process(test=True):
     try:
         new_hires_df = new_hires(get_employees(filepath), last_runtime) # retrieve employee.csv and filter down to new hires from the employee.csv table from toolbox
     except:
-        print("Error: retrieving new hires")
+        logging.exception("Error: retrieving new hires")
         
     # 3. Select new hires by deptID
     try:
@@ -178,7 +179,7 @@ def run_process(test=True):
     # 4. Select new hires by jobTitle
         hires_by_jobTitle_df = hires_by_jobTitle(new_hires_df)
     except:
-        print("Error: retrieving hires by deptID & jobTitle")
+        logging.exception("Error: retrieving hires by deptID & jobTitle")
     
     # 5. Extract the email addresses from the list of new hires and remove duplicates
     email_addresses = hires_by_deptID_df['mail'].tolist() + hires_by_jobTitle_df['mail'].tolist()
@@ -200,18 +201,17 @@ def run_process(test=True):
         try:
             send_mail(send_from, send_to, subject, message, port=1025, server='localhost', use_tls=False) # for debugging/testing purposes
         except:
-            print("Error: sending emails")
+            logging.exception("Error: sending emails")
     else:
         try:
             send_mail(send_from, send_to, subject, message) # fires off email in production
         except:
-            print("Error: sending emails")
-        
-    # 8. Logging and error reporting
-    # NEED TO DO STILL
+            logging.exception("Error: sending emails")
+    
+    logging.info('Process ends. Message sent to these addresses:' + ', '.join(email_addresses)) # logging end time and output
     
 run_process(test=True)
 
 # Check to see if new_hire.py is being runned as a script. If so run_process()
-if __name__ == '__main__':
-    run_process()
+# if __name__ == '__main__':
+#     run_process()
