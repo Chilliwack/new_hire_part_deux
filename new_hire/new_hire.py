@@ -211,3 +211,7 @@ def run_process(test=True):
     # NEED TO DO STILL
     
 run_process(test=True)
+
+# Check to see if new_hire.py is being runned as a script. If so run_process()
+if __name__ == '__main__':
+    run_process()
