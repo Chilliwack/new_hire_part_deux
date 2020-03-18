@@ -199,7 +199,7 @@ def run_process(test=True):
     # You can start a local SMTP debugging server by typing the following in shell "python -m smtpd -c DebuggingServer -n localhost:1025" and set server to `localhost` in the send_mail()
     if test:
         try:
-            XXXsend_mail(send_from, send_to, subject, message, port=1025, server='localhost', use_tls=False) # for debugging/testing purposes
+            send_mail(send_from, send_to, subject, message, port=1025, server='localhost', use_tls=False) # for debugging/testing purposes
         except:
             logging.exception("Error: sending emails")
     else:
