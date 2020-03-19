@@ -153,8 +153,11 @@ def run_process(test=True):
     path_to_test= os.path.dirname(os.path.realpath(__file__))
     base_path= os.path.dirname(path_to_test)
     full_path = base_path + '/new_hire/config.txt'
-
-    config = json.load(open(full_path))
+    
+    try:
+        config = json.load(open(full_path)) # open the required config.txt file
+    except:
+        logging.exception("Error: retrieving config.txt")
     
     # 1. Get the `last_runtime` value. This assumes that the CRON job is run every week
     last_runtime = datetime.today() - timedelta(days=7)
